@@ -753,7 +753,12 @@ section + section::before {
 <!-- NAV -->
 <nav>
   <a href="#home" class="nav-logo">
-    <span class="nav-dot"></span>
+    <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <rect width="32" height="32" rx="8" fill="#161b22" stroke="#30363d" stroke-width="1"/>
+      <text x="50%" y="54%" dominant-baseline="middle" text-anchor="middle"
+        font-family="Syne, sans-serif" font-weight="800" font-size="13"
+        fill="#58a6ff">JJ</text>
+    </svg>
     Joemon Jose
   </a>
   <ul class="nav-links">
@@ -1035,7 +1040,7 @@ function updateProgress() {
   pFill.style.width = (total > 0 ? (scrolled / total) * 100 : 0) + '%';
 }
 
-// Section glow on scroll
+// Section glow + active nav on scroll
 const allSections = document.querySelectorAll('section[id]');
 const navAs = document.querySelectorAll('.nav-links a');
 function updateSections() {
@@ -1044,4 +1049,14 @@ function updateSections() {
   allSections.forEach(s => {
     if (window.scrollY >= s.offsetTop - 140) cur = s.id;
     const inView = mid >= s.offsetTop && mid < s.offsetTop + s.offsetHeight;
-    s.class
+    s.classList.toggle('in-view', inView);
+  });
+  navAs.forEach(a => a.classList.toggle('active', a.getAttribute('href') === '#' + cur));
+}
+
+window.addEventListener('scroll', () => { updateProgress(); updateSections(); }, { passive: true });
+updateProgress();
+updateSections();
+</script>
+</body>
+</html>
