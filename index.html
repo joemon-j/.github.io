@@ -438,8 +438,34 @@ nav {
   color: var(--text);
 }
 
-/* ── CARD BASE ── */
-.card {
+/* ── AMBIENT GLOW — Skill cards (blue) ── */
+.skill-card {
+  position: relative;
+  transition: box-shadow 0.4s ease, transform 0.25s ease, border-color 0.25s ease;
+}
+.skill-card:hover {
+  border-color: rgba(88,166,255,0.4);
+  transform: translateY(-4px);
+  box-shadow:
+    0 0 0 1px rgba(88,166,255,0.1),
+    0 8px 32px rgba(0,0,0,0.4),
+    0 0 30px rgba(88,166,255,0.12),
+    0 0 80px rgba(88,166,255,0.07);
+}
+
+/* ── AMBIENT GLOW — Project cards (purple) ── */
+.project-card {
+  transition: box-shadow 0.4s ease, transform 0.25s ease, border-color 0.25s ease;
+}
+.project-card:hover {
+  border-color: rgba(188,140,255,0.45) !important;
+  box-shadow:
+    0 0 0 1px rgba(188,140,255,0.1),
+    0 8px 40px rgba(0,0,0,0.5),
+    0 0 40px rgba(188,140,255,0.15),
+    0 0 100px rgba(188,140,255,0.08),
+    inset 0 0 30px rgba(188,140,255,0.03);
+}
   background: var(--bg2);
   border: 1px solid var(--border);
   border-radius: 10px;
@@ -528,6 +554,19 @@ nav {
   padding: 1.5rem;
   position: relative; overflow: hidden;
 }
+/* Top glow bar — blue */
+.skill-card::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 10%; right: 10%;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(88,166,255,0.7), transparent);
+  opacity: 0;
+  transition: opacity 0.4s ease;
+  border-radius: 50%;
+  box-shadow: 0 0 12px 4px rgba(88,166,255,0.35);
+}
+.skill-card:hover::before { opacity: 1; }
 .skill-card::after {
   content: '';
   position: absolute; inset:0;
@@ -563,6 +602,21 @@ nav {
 .project-card {
   padding: 1.8rem 2rem;
   position: relative;
+  overflow: hidden;
+}
+/* Top glow bar — purple */
+.project-card .glow-bar {
+  position: absolute;
+  top: 0; left: 5%; right: 5%;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(188,140,255,0.9), transparent);
+  opacity: 0;
+  transition: opacity 0.4s ease;
+  box-shadow: 0 0 16px 6px rgba(188,140,255,0.3);
+  border-radius: 50%;
+  pointer-events: none;
+}
+  position: relative;
 }
 .project-card::before {
   content: '';
@@ -574,7 +628,7 @@ nav {
   transition: opacity 0.3s;
 }
 .project-card:hover { transform: translateX(4px); }
-.project-card:hover::before { opacity: 1; }
+.project-card:hover .glow-bar { opacity: 1; }
 
 .proj-num {
   font-family: var(--font-mono);
@@ -1107,6 +1161,7 @@ section + section::before {
     <div class="projects-list">
 
       <div class="project-card card fade fade-1">
+        <div class="glow-bar"></div>
         <div class="proj-num">// 01</div>
         <div class="proj-role-badges">
           <span class="role-badge data">⚙ Data Engineering</span>
@@ -1131,6 +1186,7 @@ section + section::before {
       </div>
 
       <div class="project-card card fade fade-2">
+        <div class="glow-bar"></div>
         <div class="proj-num">// 02</div>
         <div class="proj-role-badges">
           <span class="role-badge qa">✓ Manual Testing</span>
@@ -1149,6 +1205,7 @@ section + section::before {
       </div>
 
       <div class="project-card card fade fade-3">
+        <div class="glow-bar"></div>
         <div class="proj-num">// 03</div>
         <div class="proj-role-badges">
           <span class="role-badge qa">✓ Manual Testing</span>
@@ -1167,6 +1224,7 @@ section + section::before {
       </div>
 
       <div class="project-card card fade fade-4">
+        <div class="glow-bar"></div>
         <div class="proj-num">// 04</div>
         <div class="proj-role-badges">
           <span class="role-badge qa">✓ Manual Testing</span>
@@ -1186,6 +1244,7 @@ section + section::before {
       </div>
 
       <div class="project-card card fade fade-5">
+        <div class="glow-bar"></div>
         <div class="proj-num">// 05</div>
         <div class="proj-role-badges">
           <span class="role-badge qa">✓ Manual Testing</span>
@@ -1205,6 +1264,7 @@ section + section::before {
       </div>
 
       <div class="project-card card fade fade-6">
+        <div class="glow-bar"></div>
         <div class="proj-num">// 06</div>
         <div class="proj-role-badges">
           <span class="role-badge qa">✓ Manual Testing</span>
