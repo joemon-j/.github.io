@@ -392,17 +392,18 @@ section{
 /* ═══════════════════════════════════════════
    SCROLL REVEAL
 ═══════════════════════════════════════════ */
+/* sr only used for section labels + titles — GSAP handles everything else */
 .sr{
   opacity:0;
   transition:
-    opacity 0.9s cubic-bezier(0.16,1,0.3,1),
-    transform 0.9s cubic-bezier(0.16,1,0.3,1);
+    opacity 0.7s cubic-bezier(0.16,1,0.3,1),
+    transform 0.7s cubic-bezier(0.16,1,0.3,1);
 }
-.sr.up{transform:translateY(60px);}
-.sr.left{transform:translateX(-60px);}
-.sr.right{transform:translateX(60px);}
-.sr.scale{transform:scale(0.85) translateY(40px);}
-.sr.revealed{opacity:1;transform:none;}
+.sr.up{transform:translateY(40px);}
+.sr.left{transform:translateX(-40px);}
+.sr.right{transform:translateX(40px);}
+.sr.scale{transform:scale(0.9) translateY(20px);}
+.sr.revealed{opacity:1 !important;transform:none !important;}
 .sr.d1{transition-delay:0.05s;}
 .sr.d2{transition-delay:0.13s;}
 .sr.d3{transition-delay:0.21s;}
@@ -968,7 +969,7 @@ footer{
     <div class="sec-label sr up d1">01 — About</div>
     <h2 class="sec-title sr scale d2">The Story So Far</h2>
     <div class="about-grid">
-      <div class="sr left d2">
+      <div>
         <div class="about-text">
           <p>I'm a backend engineer at <strong>Edstem Technologies</strong> with 5+ years building data systems for government and enterprise platforms. My career started in QA — giving me a precision-first mindset most engineers don't have.</p>
           <p>That foundation became a superpower: I catch bugs before they exist, write code that's <strong>reliable by design</strong>, and handle data at scale across PostgreSQL and OpenSearch with surgical accuracy.</p>
@@ -985,7 +986,7 @@ footer{
           </div>
         </div>
       </div>
-      <div class="sr right d3">
+      <div>
         <div class="sec-label" style="margin-bottom:1rem;">// focus areas</div>
         <ul class="focus-list">
           <li><span class="focus-dot"></span>PostgreSQL optimization &amp; complex query design</li>
@@ -1005,7 +1006,7 @@ footer{
     <div class="sec-label sr up d1">02 — Skills</div>
     <h2 class="sec-title sr scale d2">Technical Arsenal</h2>
     <div class="skills-grid">
-      <div class="skill-cell sr up d1">
+      <div class="skill-cell">
         <span class="skill-icon">⚙️</span>
         <div class="skill-name">Backend</div>
         <div class="skill-tags">
@@ -1014,7 +1015,7 @@ footer{
           <span class="stag">PyTest</span><span class="stag">Automation</span>
         </div>
       </div>
-      <div class="skill-cell sr up d2">
+      <div class="skill-cell">
         <span class="skill-icon">🗄️</span>
         <div class="skill-name">Databases</div>
         <div class="skill-tags">
@@ -1023,7 +1024,7 @@ footer{
           <span class="stag">Query Opt.</span><span class="stag">SQL</span>
         </div>
       </div>
-      <div class="skill-cell sr up d3">
+      <div class="skill-cell">
         <span class="skill-icon">🔍</span>
         <div class="skill-name">Search</div>
         <div class="skill-tags">
@@ -1032,7 +1033,7 @@ footer{
           <span class="stag">Index Debug</span>
         </div>
       </div>
-      <div class="skill-cell sr up d4">
+      <div class="skill-cell">
         <span class="skill-icon">☁️</span>
         <div class="skill-name">Cloud</div>
         <div class="skill-tags">
@@ -1040,7 +1041,7 @@ footer{
           <span class="stag">Git</span><span class="stag">GitHub Actions</span>
         </div>
       </div>
-      <div class="skill-cell sr up d5">
+      <div class="skill-cell">
         <span class="skill-icon">🧪</span>
         <div class="skill-name">Testing</div>
         <div class="skill-tags">
@@ -1049,7 +1050,7 @@ footer{
           <span class="stag">Load Testing</span><span class="stag">Security</span>
         </div>
       </div>
-      <div class="skill-cell sr up d6">
+      <div class="skill-cell">
         <span class="skill-icon">🛠️</span>
         <div class="skill-name">Tools</div>
         <div class="skill-tags">
@@ -1069,7 +1070,7 @@ footer{
     <h2 class="sec-title sr scale d2">Selected Work</h2>
     <div class="proj-list">
 
-      <div class="proj-row sr up d1">
+      <div class="proj-row">
         <div class="proj-num">// 01</div>
         <div class="proj-body">
           <div class="proj-badges">
@@ -1097,7 +1098,7 @@ footer{
         <div class="proj-meta"><div class="proj-year">2023–Present</div></div>
       </div>
 
-      <div class="proj-row sr up d2">
+      <div class="proj-row">
         <div class="proj-num">// 02</div>
         <div class="proj-body">
           <div class="proj-badges"><span class="pbadge pb-qa">✓ Manual Testing</span></div>
@@ -1118,7 +1119,7 @@ footer{
         <div class="proj-meta"><div class="proj-year">2020–2022</div></div>
       </div>
 
-      <div class="proj-row sr up d3">
+      <div class="proj-row">
         <div class="proj-num">// 03</div>
         <div class="proj-body">
           <div class="proj-badges"><span class="pbadge pb-qa">✓ Manual Testing</span></div>
@@ -1139,7 +1140,7 @@ footer{
         <div class="proj-meta"><div class="proj-year">2020–2022</div></div>
       </div>
 
-      <div class="proj-row sr up d4">
+      <div class="proj-row">
         <div class="proj-num">// 04</div>
         <div class="proj-body">
           <div class="proj-badges">
@@ -1163,7 +1164,7 @@ footer{
         <div class="proj-meta"><div class="proj-year">2022–2023</div></div>
       </div>
 
-      <div class="proj-row sr up d5">
+      <div class="proj-row">
         <div class="proj-num">// 05</div>
         <div class="proj-body">
           <div class="proj-badges">
@@ -1188,7 +1189,7 @@ footer{
         <div class="proj-meta"><div class="proj-year">2022–2023</div></div>
       </div>
 
-      <div class="proj-row sr up d6">
+      <div class="proj-row">
         <div class="proj-num">// 06</div>
         <div class="proj-body">
           <div class="proj-badges"><span class="pbadge pb-qa">✓ Manual Testing</span></div>
@@ -1220,7 +1221,7 @@ footer{
     <h2 class="sec-title sr scale d2">Work History</h2>
     <div class="exp-list">
 
-      <div class="exp-card sr left d2">
+      <div class="exp-card">
         <div class="exp-left">
           <div class="exp-date">2023 — Present</div>
           <div class="exp-co">Edstem Technologies<br>Kochi, Kerala</div>
@@ -1243,7 +1244,7 @@ footer{
         </div>
       </div>
 
-      <div class="exp-card sr left d3">
+      <div class="exp-card">
         <div class="exp-left">
           <div class="exp-date">2022 — 2023</div>
           <div class="exp-co">Edstem Technologies<br>Kochi, Kerala</div>
@@ -1266,7 +1267,7 @@ footer{
         </div>
       </div>
 
-      <div class="exp-card sr left d4">
+      <div class="exp-card">
         <div class="exp-left">
           <div class="exp-date">2020 — 2022</div>
           <div class="exp-co">Edstem Technologies<br>Mobile Division</div>
@@ -1298,7 +1299,7 @@ footer{
     <h2 class="sec-title sr scale d2">Licenses &amp; Certs</h2>
     <div class="certs-grid">
 
-      <div class="cert-card sr up d1">
+      <div class="cert-card">
         <div class="cert-issuer-row">
           <span class="cert-issuer-badge badge-dl">DeepLearning.AI</span>
           <span class="cert-date">Mar 2026</span>
@@ -1311,7 +1312,7 @@ footer{
         </div>
       </div>
 
-      <div class="cert-card sr up d2">
+      <div class="cert-card">
         <div class="cert-issuer-row">
           <span class="cert-issuer-badge badge-dl">DeepLearning.AI</span>
           <span class="cert-date">Mar 2026</span>
@@ -1324,7 +1325,7 @@ footer{
         </div>
       </div>
 
-      <div class="cert-card sr up d3">
+      <div class="cert-card">
         <div class="cert-issuer-row">
           <span class="cert-issuer-badge badge-dl">DeepLearning.AI</span>
           <span class="cert-date">Mar 2026</span>
@@ -1337,7 +1338,7 @@ footer{
         </div>
       </div>
 
-      <div class="cert-card sr up d4">
+      <div class="cert-card">
         <div class="cert-issuer-row">
           <span class="cert-issuer-badge badge-ms">Microsoft</span>
           <span class="cert-issuer-badge badge-li" style="margin-left:0.2rem;">LinkedIn</span>
@@ -1351,7 +1352,7 @@ footer{
         </div>
       </div>
 
-      <div class="cert-card sr up d5">
+      <div class="cert-card">
         <div class="cert-issuer-row">
           <span class="cert-issuer-badge badge-li">LinkedIn Learning</span>
           <span class="cert-date">Mar 2026</span>
@@ -1364,7 +1365,7 @@ footer{
         </div>
       </div>
 
-      <div class="cert-card sr up d6">
+      <div class="cert-card">
         <div class="cert-issuer-row">
           <span class="cert-issuer-badge badge-li">LinkedIn Learning</span>
           <span class="cert-date">Mar 2026</span>
@@ -1377,7 +1378,7 @@ footer{
         </div>
       </div>
 
-      <div class="cert-card sr up d1">
+      <div class="cert-card">
         <div class="cert-issuer-row">
           <span class="cert-issuer-badge badge-li">LinkedIn Learning</span>
           <span class="cert-date">Mar 2026</span>
@@ -1390,7 +1391,7 @@ footer{
         </div>
       </div>
 
-      <div class="cert-card sr up d2">
+      <div class="cert-card">
         <div class="cert-issuer-row">
           <span class="cert-issuer-badge badge-an">Anthropic</span>
           <span class="cert-date">Mar 2026</span>
@@ -1412,13 +1413,13 @@ footer{
   <div class="wrap">
     <div class="contact-inner">
       <div class="sec-label sr up d1" style="justify-content:center;">06 — Contact</div>
-      <div class="contact-title sr scale d2">
+      <div class="contact-title">
         Let's<br>
         <span class="dim">Build</span><br>
         Something
       </div>
-      <p class="contact-desc sr up d3">Open to backend projects, data engineering challenges, and engineering opportunities. Drop a message — I'll get back to you.</p>
-      <div class="contact-links sr up d4">
+      <p class="contact-desc">Open to backend projects, data engineering challenges, and engineering opportunities. Drop a message — I'll get back to you.</p>
+      <div class="contact-links">
         <a href="https://mail.google.com/mail/?view=cm&to=joemonjose75@gmail.com&su=Hello%20Joemon" target="_blank" class="clink">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg>Email
         </a>
@@ -1435,11 +1436,11 @@ footer{
           <svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>WhatsApp
         </a>
       </div>
-      <a href="https://wa.me/918086365526" target="_blank" class="btn btn-p sr up d5" style="display:inline-flex;align-items:center;gap:0.5rem;cursor:none;margin:0 auto 1rem;">
+      <a href="https://wa.me/918086365526" target="_blank" class="btn btn-p" style="display:inline-flex;align-items:center;gap:0.5rem;cursor:none;margin:0 auto 1rem;">
         Message on WhatsApp →
       </a>
       <br>
-      <a href="Joemon_Jose_Resume.pdf" download class="btn btn-g sr up d6" style="display:inline-flex;align-items:center;gap:0.5rem;cursor:none;margin:0.5rem auto 0;border-color:rgba(0,255,136,0.3);color:var(--accent2);">
+      <a href="Joemon_Jose_Resume.pdf" download class="btn btn-g" style="display:inline-flex;align-items:center;gap:0.5rem;cursor:none;margin:0.5rem auto 0;border-color:rgba(0,255,136,0.3);color:var(--accent2);">
         <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
         Download Resume (PDF)
       </a>
@@ -1454,7 +1455,152 @@ footer{
 
 <!-- THREE.JS -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+<!-- LENIS SMOOTH SCROLL -->
+<script src="https://cdn.jsdelivr.net/npm/@studio-freight/lenis@1.0.42/dist/lenis.min.js"></script>
+<!-- GSAP -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
 <script>
+/* ═══════════════════════════════════════════
+   LENIS — SMOOTH SCROLL ENGINE
+═══════════════════════════════════════════ */
+const lenis = new Lenis({
+  duration: 1.4,
+  easing: (x) => Math.min(1, 1.001 - Math.pow(2, -10 * x)),
+  smoothWheel: true,
+  wheelMultiplier: 0.85,
+  touchMultiplier: 1.8,
+  infinite: false,
+});
+
+// Connect Lenis to GSAP ticker for sync
+gsap.registerPlugin(ScrollTrigger);
+gsap.ticker.add((time) => {
+  lenis.raf(time * 1000);
+});
+gsap.ticker.lagSmoothing(0);
+
+// Keep ScrollTrigger in sync with Lenis
+lenis.on('scroll', ScrollTrigger.update);
+
+// Nav anchor links — smooth scroll via Lenis
+document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+  anchor.addEventListener('click', (e) => {
+    e.preventDefault();
+    const target = document.querySelector(anchor.getAttribute('href'));
+    if (target) lenis.scrollTo(target, { offset: -56, duration: 1.6 });
+  });
+});
+
+/* ═══════════════════════════════════════════
+   GSAP SCROLL ANIMATIONS
+═══════════════════════════════════════════ */
+window.addEventListener('DOMContentLoaded', () => {
+
+  // Section titles — draw underline on scroll
+  document.querySelectorAll('.sec-title').forEach(title => {
+    ScrollTrigger.create({
+      trigger: title,
+      start: 'top 85%',
+      onEnter: () => title.classList.add('revealed'),
+    });
+  });
+
+  // Section labels
+  document.querySelectorAll('.sec-label').forEach(label => {
+    ScrollTrigger.create({
+      trigger: label,
+      start: 'top 88%',
+      onEnter: () => label.classList.add('revealed'),
+    });
+  });
+
+  // Parallax on hero name
+  gsap.to('.hero-name', {
+    yPercent: -18,
+    ease: 'none',
+    scrollTrigger: {
+      trigger: '#home',
+      start: 'top top',
+      end: 'bottom top',
+      scrub: 1.5,
+    }
+  });
+
+  // Hero desc subtle parallax
+  gsap.to('.hero-desc-row', {
+    yPercent: -10,
+    opacity: 0.3,
+    ease: 'none',
+    scrollTrigger: {
+      trigger: '#home',
+      start: '30% top',
+      end: 'bottom top',
+      scrub: 2,
+    }
+  });
+
+  // Marquee speed boost on scroll
+  gsap.to('.marquee-track', {
+    ease: 'none',
+    scrollTrigger: {
+      trigger: '.marquee-section',
+      start: 'top bottom',
+      end: 'bottom top',
+      scrub: 1,
+      onUpdate: (self) => {
+        const speed = 22 - self.progress * 10;
+        document.querySelector('.marquee-track').style.animationDuration = speed + 's';
+      }
+    }
+  });
+
+  const gsapDefaults = { once: true };
+
+  // About grid — staggered slide in
+  gsap.from('.about-grid > *', {
+    y: 50, opacity: 0, duration: 0.9, stagger: 0.18, ease: 'power3.out',
+    scrollTrigger: { trigger: '.about-grid', start: 'top 90%', once: true }
+  });
+
+  // Skills cells — cascade in
+  gsap.from('.skill-cell', {
+    y: 35, opacity: 0, duration: 0.6, stagger: 0.07, ease: 'power2.out',
+    scrollTrigger: { trigger: '.skills-grid', start: 'top 92%', once: true }
+  });
+
+  // Project rows — slide in from left
+  gsap.from('.proj-row', {
+    x: -35, opacity: 0, duration: 0.7, stagger: 0.09, ease: 'power3.out',
+    scrollTrigger: { trigger: '.proj-list', start: 'top 92%', once: true }
+  });
+
+  // Experience cards — slide in from left
+  gsap.from('.exp-card', {
+    x: -40, opacity: 0, duration: 0.8, stagger: 0.13, ease: 'power3.out',
+    scrollTrigger: { trigger: '.exp-list', start: 'top 92%', once: true }
+  });
+
+  // Cert cards — pop in
+  gsap.from('.cert-card', {
+    scale: 0.93, opacity: 0, duration: 0.55, stagger: 0.06, ease: 'back.out(1.4)',
+    scrollTrigger: { trigger: '.certs-grid', start: 'top 92%', once: true }
+  });
+
+  // Contact title — big scale reveal
+  gsap.from('.contact-title', {
+    y: 60, opacity: 0, duration: 1, ease: 'power4.out',
+    scrollTrigger: { trigger: '.contact-title', start: 'top 92%', once: true }
+  });
+
+  // Contact links — stagger up
+  gsap.from('.clink', {
+    y: 25, opacity: 0, duration: 0.5, stagger: 0.07, ease: 'power2.out',
+    scrollTrigger: { trigger: '.contact-links', start: 'top 92%', once: true }
+  });
+
+});
+
 /* ═══════════════════════════════════════════
    LOADER
 ═══════════════════════════════════════════ */
@@ -1576,11 +1722,11 @@ window.addEventListener('scroll', () => {
 }, { passive: true });
 
 let camTX = 0, camTY = 8;
-let t = 0;
+let clock = 0;
 
 function animate() {
   requestAnimationFrame(animate);
-  t += 0.008;
+  clock += 0.008;
 
   /* Camera parallax + scroll zoom */
   camTX += (mx * 3 - camTX) * 0.04;
@@ -1593,8 +1739,8 @@ function animate() {
   /* Pulse nodes */
   nodes.forEach(n => {
     const p = n.userData;
-    n.position.y = p.oy + Math.sin(t * p.speed + p.phase) * 0.3;
-    n.material.opacity = 0.4 + Math.sin(t * p.speed + p.phase) * 0.3;
+    n.position.y = p.oy + Math.sin(clock * p.speed + p.phase) * 0.3;
+    n.material.opacity = 0.4 + Math.sin(clock * p.speed + p.phase) * 0.3;
   });
 
   /* Drift particles */
@@ -1669,8 +1815,8 @@ const revObs = new IntersectionObserver(entries => {
     if (e.isIntersecting) {
       e.target.classList.add('revealed');
       /* Stagger tags inside */
-      e.target.querySelectorAll('.stag').forEach((t, i) => {
-        t.style.animationDelay = (i * 55) + 'ms';
+      e.target.querySelectorAll('.stag').forEach((tagEl, i) => {
+        tagEl.style.animationDelay = (i * 55) + 'ms';
       });
     }
   });
@@ -1679,21 +1825,24 @@ const revObs = new IntersectionObserver(entries => {
 document.querySelectorAll('.sr, .sec-label, .sec-title').forEach(el => revObs.observe(el));
 
 /* ═══════════════════════════════════════════
-   SCROLL PROGRESS + NAV
+   SCROLL PROGRESS + NAV (via Lenis)
 ═══════════════════════════════════════════ */
 const prog = document.getElementById('prog');
 const secs = document.querySelectorAll('section[id]');
 const navAs = document.querySelectorAll('.nav-links a');
 
-window.addEventListener('scroll', () => {
-  const s = window.scrollY;
-  const h = document.documentElement.scrollHeight - window.innerHeight;
-  prog.style.width = (h > 0 ? s/h*100 : 0) + '%';
+lenis.on('scroll', ({ scroll, limit }) => {
+  // Progress bar
+  prog.style.width = (limit > 0 ? scroll / limit * 100 : 0) + '%';
 
+  // Three.js scroll sync
+  scrollY = scroll / limit;
+
+  // Active nav
   let cur2 = '';
-  secs.forEach(sec => { if (s >= sec.offsetTop - 120) cur2 = sec.id; });
+  secs.forEach(sec => { if (scroll >= sec.offsetTop - 120) cur2 = sec.id; });
   navAs.forEach(a => a.classList.toggle('active', a.getAttribute('href') === '#' + cur2));
-}, { passive: true });
+});
 
 /* ═══════════════════════════════════════════
    STAT COUNTERS
